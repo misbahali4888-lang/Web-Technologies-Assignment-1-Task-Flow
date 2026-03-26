@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — CS4717</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-left">
+      <div class="logo">TF</div>
+      <div>
+        <div class="app-name">TaskFlow</div>
+        <div class="app-sub">Demo Project | CS4717</div>
+      </div>
+    </div>
+    <button class="btn btn-outline" onclick="alert('Logout placeholder — backend not yet connected.')">Logout</button>
+  </header>
+
+  <!-- ── Navbar ── -->
+  <nav>
+    <span class="nav-link active" onclick="setNav(this)">Dashboard</span>
+    <span class="nav-link" onclick="setNav(this)">Tasks</span>
+    <span class="nav-link" onclick="setNav(this)">New Task</span>
+  </nav>
+
+  <!-- ── Main Content ── -->
+  <main class="page">
+    <div class="page-heading">
+      <h1>Phase 1 UI</h1>
+      <p>Manage your tasks — add, track, and delete with ease.</p>
+    </div>
+
+    <div class="main-grid">
+
+      <!-- Task List Card -->
+      <section class="card task-list-card" aria-label="Task list">
+        <div class="card-header">
+          <span class="card-title">My Tasks</span>
+          <span class="badge-count" id="task-count">5</span>
+        </div>
+        <ul id="task-list" role="list">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+
+      <!-- Create Task Form Card -->
+      <section class="card form-card" aria-label="Create task form">
+        <div class="card-header">
+          <span class="card-title">Create Task</span>
+        </div>
+        <div class="form-body">
+
+          <div class="form-group">
+            <label for="task-title">Title <span class="required-star">*</span></label>
+            <input
+              class="input"
+              type="text"
+              id="task-title"
+              placeholder="Enter task title…"
+              autocomplete="off"
+            />
+            <span class="validation-msg" id="title-error">Task title is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="task-desc">Description</label>
+            <textarea
+              class="input"
+              id="task-desc"
+              placeholder="Brief description…"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="task-status">Status</label>
+            <select class="input" id="task-status">
+              <option value="todo">Todo</option>
+              <option value="progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+
+
+          <div class="form-actions">
+            <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
+            <button class="btn btn-primary" onclick="addTask()">Create Task</button>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <span>© 2026 TaskFlow — CS4717 Web Technologies I</span>
+    <span>Privacy</span>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
